@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/610/610413.png" type="image/x-icon">
+    <title>2M2</title>
+</head>
+<body class="align">
+	<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="register.php" method="POST">
+		<h1> Tham gia với 2M2 ngay nào </h1>
+		<div class="social-container">
+			<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+			<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+			<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+		</div>
+		<span> Đăng kí tài khoản đầu tiên của bạn </span>
+		<input type="text" name="username_dang_ky" placeholder="Tên người dùng" value=""/>
+		<input type="email" name="email_dang_ky" placeholder="Email" value=""/>
+		<input type="password" name="password_dang_ky" placeholder="Mật khẩu" value=""/>
+		<button type="submit" name="submit_dang_ky">Đăng ký</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="login.php" method="POST">
+		<h1> Đăng nhập </h1>
+		<div class="social-container">
+			<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+			<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+			<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+		</div>
+		<span> Đăng nhập và kết nối với bạn bè ngay nào </span>
+		<input type="email" name="email_dang_nhap" placeholder="Email" value=""/>
+		<input type="password" name="password_dang_nhap" placeholder="Mật khẩu" value=""/>
+		<a href="#">Quên mật khẩu?</a>
+		<button type="submit" name="submit_dang_nhap"> Đăng nhập </button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+		<div class="overlay-panel overlay-left">
+			<h1>2M2</h1>
+			<img src="https://cdn-icons-png.flaticon.com/512/4105/4105457.png" alt="" class="img">
+			<p>Nơi thoả sức trò chuện cùng bạn bè, mọi lúc, mọi nơi và không giới hạn </p>
+			<button class="ghost" id="signIn"> Đăng nhập </button>
+		</div>
+		<div class="overlay-panel overlay-right">
+			<h1>Chào mừng bạn đến với 2M2!</h1>
+			<img class="img" src="https://cdn-icons-png.flaticon.com/512/4105/4105459.png" alt="">
+			<p> Bạn đã có tài khoản chưa? Nếu chưa còn ngại gì mà không tạo 1 tài khoản để kết nối với bạn bè </p>
+			<button class="ghost" id="signUp"> Đăng ký </button>
+		</div>
+		</div>
+	</div>
+
+
+	<script>
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+	});
+
+	signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+	});
+	</script>
+
+</body>
+</html>
