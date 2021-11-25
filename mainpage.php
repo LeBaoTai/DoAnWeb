@@ -21,7 +21,6 @@
 </head>
 
 <body>
-<body>
 	<main>
 		<div class="container">
 			<div class="left">
