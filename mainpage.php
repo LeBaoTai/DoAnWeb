@@ -1,15 +1,12 @@
-<!-- <?php
-        // session_start();
-        if (!isset($_SESSION['user'])) {
-            header("location:index.html");
-        } else {
-            echo "wellcome " . $_SESSION['user'];
-        }
-        ?> -->
+<?php
+	include("config.php");
+	if (!isset($_SESSION['user'])) {
+			header("location:index.html");
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +14,14 @@
     <link rel="stylesheet" href="./mainpage.css">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/610/610413.png" type="image/x-icon">
     <link rel="stylesheet" href="./asset/font/themify-icons/themify-icons.css">
+
+		<!-- add ajax -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./chat.js"></script>
     <title>Home</title>
 </head>
 
+<body>
 <body>
 	<main>
 		<div class="container">
@@ -37,12 +39,12 @@
 							<li><a href="#"><i class="ti-user" style="font-size: 26px;"></i></a></li>
 							<li><a href="#"><h3>User</h3></a></li>
 							<li>
-								<a href="">
+								<a href="#">
 									<i class="ti-settings"></i>
 									<ul class="sub-title-2">
 										<li><a href="#"> Thông tin</a></li>
 										<li><a href="#"> Trợ giúp</a></li>
-										<li><a href="#"> Đăng xuất</a></li>
+										<li><a href="logout.php"> Đăng xuất</a></li>
 									</ul>
 								</a>
 							</li>
@@ -58,37 +60,33 @@
 				</div>
 
 				<div class="list-user">
-					<ul class="user">
-						<li>
-							<div class="sub-user">
-								<i class="ti-user"></i>
-								<div class="mess">
-									<h4 class="username">Phạm Minh Quân</h4>
-									<p class="last-mess">ALo ALo</p>
-								</div>
-							</div>
-						</li>
+					<div class="user-block">
+						<i class="ti-user"></i>
 
-						<li>
-							<div class="sub-user">
-								<i class="ti-user"></i>
-								<div class="mess">
-									<h4 class="username"> Lê Bảo Tài </h4>
-									<p class="last-mess">ALo ALo</p>
-								</div>
-							</div>
-						</li>
+						<div class="profile">
+							<span>User name</span>
+							<p>Message</p>
+						</div>
+					</div>
 
-						<li>
-							<div class="sub-user">
-								<i class="ti-user"></i>
-								<div class="mess">
-									<h4 class="username">Name</h4>
-									<p class="last-mess">ALo ALo</p>
-								</div>
-							</div>
-						</li>
-					</ul>
+					<div class="user-block">
+						<i class="ti-user"></i>
+
+						<div class="profile">
+							<span>User name</span>
+							<p>Message</p>
+						</div>
+					</div>
+					
+					<div class="user-block">
+						<i class="ti-user"></i>
+
+						<div class="profile">
+							<span>User name</span>
+							<p>Message</p>
+						</div>
+					</div>
+
 				</div>
 			</div>
 
@@ -111,7 +109,63 @@
 				</div>
 
 				<div class="middle">
-
+					<div class="chat out">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
+						</div>
+					</div>
+					
+					<div class="chat in">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
+						</div>
+					</div>
+					
+					<div class="chat out">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
+						</div>
+					</div>
+					
+					<div class="chat in">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
+						</div>
+					</div>
+					<div class="chat out">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
+						</div>
+					</div>
+					
+					<div class="chat in">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
+						</div>
+					</div>
+					<div class="chat out">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
+						</div>
+					</div>
+					
+					<div class="chat in">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
+						</div>
+					</div>
+					<div class="chat out">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
+						</div>
+					</div>
+					
+					<div class="chat in">
+						<div class="text">
+							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
+						</div>
+					</div>
+					
 				</div>
 
 				<div class="footer">
