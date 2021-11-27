@@ -132,6 +132,7 @@
   
   .header .nav input:focus {
     outline: none;
+    background-color: #ccc;
   }
   
   .header .nav .btn-search {
@@ -280,11 +281,11 @@
     height: 32px;
     width: 100%;
     border-radius: 15px;
-    border: 1px solid #ccc;
-    background: #ccc;
+    border: 1px solid #555;
   }
   
   .chat-box input:focus {
+    background: #ccc;
     outline: none;
   }
   
