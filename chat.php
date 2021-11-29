@@ -1,8 +1,8 @@
 <?php
-	include "config.php";
-	if (!isset($_SESSION['user'])) {
-			header("location:index.html");
-	}
+  include "config.php";
+	if(!isset($_SESSION['user'])){
+    header("index.html");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +35,7 @@
 						<!-- phần title -->
 						<div class="title">
 							<?php
+								session_start();
 								include	"config.php";
 								// $conn = mysqli_connect('localhost', 'root', '', 'data');
 								$sql = mysqli_query($conn, "SELECT * FROM dang_ky WHERE email = '{$_SESSION['user']}'");
@@ -82,86 +83,37 @@
 			<div class="right">
 				<!-- phần header -->
 				<div class="header">
-					<!-- <div class="avatar">
+          <?php
+            $user_name = mysqli_real_escape_string($conn, $_GET['user']);
+            $sql = mysqli_query($conn, "SELECT * FROM dang_ky WHERE email = '{$user_name}'");
+            if (mysqli_num_rows($sql)) {
+              $row = mysqli_fetch_assoc($sql);
+            }
+          ?>
+					<div class="avatar">
 						<i class="ti-user"></i>
 					</div>
 
 					<div class="user">
-						<h3 class="name"> Lê Bảo Tài </h3>
-						<h5 class="status">Offline</h5>
+						<h3 class="name"><?php echo $row['ten_nguoi_dung']?> </h3>
 					</div>
 
 					<div class="nav">
 						<div class="icon"><i class="ti-microphone"></i></div>
 						<div class="icon"><i class="ti-video-camera"></i></div>
 						<div class="icon"><i class="ti-info-alt"></i></div>
-					</div> -->
+					</div>
 				</div>
 
 				<!-- phần tin nhắn middle -->
 				<div class="middle">
-					<!-- <div class="chat out">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
-						</div>
-					</div>
-					
-					<div class="chat in">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
-						</div>
-					</div>
-					
-					<div class="chat out">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
-						</div>
-					</div>
-					
-					<div class="chat in">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
-						</div>
-					</div>
-					<div class="chat out">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
-						</div>
-					</div>
-					
-					<div class="chat in">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
-						</div>
-					</div>
-					<div class="chat out">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
-						</div>
-					</div>
-					
-					<div class="chat in">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
-						</div>
-					</div>
-					<div class="chat out">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf</p>
-						</div>
-					</div>
-					
-					<div class="chat in">
-						<div class="text">
-							<p>sfasfsafasfsafsafasfsfasfsafsafsafasfsfffffffffffffffffffffffffffffffffffffffffffffffsfasfasfasfsafasfsafasf.</p>
-						</div>
-					</div> -->
 					
 				</div>
 
 				<!-- phần footer -->
+				<form action="#" class="typing-area" autocomplete="off">
 				<div class="footer">
-					<!-- <div class="nav">
+					<div class="nav">
 						<div class="icon"><i class="ti-plus"></i></div>
 						<div class="icon"><i class="ti-image"></i></div>
 						<div class="icon"><i class="ti-file"></i></div>
@@ -169,13 +121,16 @@
 					</div>
 
 					<div class="chat-box">
-						<input type="text" name="" id="" placeholder="Aa">
+            <input type="text" name="outgoing_id" value="<?php echo $_SESSION['user'];?> " hidden>
+            <input type="text" name="incoming_id" value="<?php echo $row['email'];?>" hidden>
+						<input type="text" name="message" id="abc" class="input-field" placeholder="Aa">
 					</div>
 
 					<div class="send">
-						<div class="icon"><i class="ti-angle-double-up"></i></div>
-					</div> -->
+						<div class="icon"><button class="send-btn"><i class="ti-angle-double-up"></i></button></div>
+					</div>
 				</div>
+				</form>
 			</div>
 		</div>
 	</section>

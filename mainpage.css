@@ -173,6 +173,12 @@
     border-bottom: 1px solid #ccc;
     align-items: center;
     page-break-after: 20px;
+    text-decoration: none;
+  }
+
+  .left .list-user a{
+    text-decoration: none;
+    color: #333;
   }
 
   .left .list-user .user-block:last-child {
@@ -241,6 +247,7 @@
   }
   
   .middle .chat p{
+    padding: 10px 10px;
     word-wrap: break-word;
   }
   
@@ -251,7 +258,6 @@
   }
   
   .out .text p{
-    padding: 0 15px;
     background: #00b0ff;
     color: #fff;
     border-radius: 18px 18px 0 18px;
@@ -269,7 +275,6 @@
   }
   
   .in .text p{
-    padding: 0 15px;
     background: #ddd;
     color: #333;
     border-radius: 18px 18px 18px 0px;
