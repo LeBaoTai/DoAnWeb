@@ -1,0 +1,14 @@
+CREATE TABLE dang_ky (
+  ten_nguoi_dung VARCHAR(20) NOT NULL,
+  email VARCHAR(20) NOT NULL,
+  mat_khau VARCHAR(20) NOT NULL,
+  PRIMARY KEY (email)
+)
+
+CREATE TABLE (
+  msg_id INT 	AUTO_INCREMENT,
+  incoming_msg_id	VARCHAR(20),
+  outgoing_msg_id	VARCHAR(20),
+  msg VARCHAR(1000),
+  PRIMARY KEY (msg_id)
+)
