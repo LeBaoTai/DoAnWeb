@@ -122,8 +122,8 @@
 
 					<div class="chat-box">
             <input type="text" name="outgoing_id" value="<?php echo $_SESSION['user'];?> " hidden>
-            <input type="text" name="incoming_id" value="<?php echo $row['email'];?>" hidden>
 						<input type="text" name="message" id="abc" class="input-field" placeholder="Aa">
+            <input type="text" name="incoming_id" value="<?php echo $row['email'];?>" hidden>
 					</div>
 
 					<div class="send">
